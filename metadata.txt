@@ -1,0 +1,21 @@
+[general]
+name:AtlasExportFunction
+description:Expression function to export atlas images.
+
+version:1.0
+qgisMinimumVersion:3.16
+experimental:True
+homepage:https://github.com/elpaso/qgis-atlas-export-function
+repository:https://github.com/elpaso/qgis-atlas-export-function
+tracker:https://github.com/elpaso/qgis-atlas-export-function/issues
+
+about:Function to export atlas images.
+
+changelog:
+    Version 1.0:
+    * initial implementation
+
+
+icon:icons/icon.svg
+email:apasotti@gmail.com
+author:Alessandro Pasotti
