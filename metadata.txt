@@ -9,7 +9,8 @@ homepage:https://github.com/elpaso/qgis-atlas-export-function
 repository:https://github.com/elpaso/qgis-atlas-export-function
 tracker:https://github.com/elpaso/qgis-atlas-export-function/issues
 
-about:Function to export atlas images.
+about:This plugin adds a new expression function atlas_image() that renders an atlas page to an image and returns the binary content of the image.
+    Funded by: Kanton Solothurn
 
 changelog:
     Version 1.0:
