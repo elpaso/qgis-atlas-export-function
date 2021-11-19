@@ -17,6 +17,6 @@ changelog:
     * initial implementation
 
 
-icon:icons/icon.svg
+icon:icons/atlas_image_icon.svg
 email:apasotti@gmail.com
 author:Alessandro Pasotti
