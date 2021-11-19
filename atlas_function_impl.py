@@ -43,7 +43,8 @@ class AtlasImageFunction(QgsExpressionFunction):
         <div class="description"><p>Renders an atlas page to an image and returns the binary content of the image.</p></div>
         <h4>Syntax</h4>
         <div class="syntax">
-        <code><span class="functionname">atlas_image</span>(<span class="argument">feature_id</span>,<span class="argument">layout_name</span>,<span class="argument">layout_page</span>,<span class="argument">image_format</span>,<span class="argument">dpi</span>)</code>
+        <code><span class="functionname">atlas_image</span>([<span class="argument">feature_id</span>],[<span class="argument">layout_name</span>],[<span class="argument">layout_page</span>],[<span class="argument">image_format</span>],[<span class="argument">dpi</span>])</code>
+        <br/><br/>[ ] marks optional components
         <h4>Arguments</h4>
         <div class="arguments">
         <table>
