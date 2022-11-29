@@ -2,7 +2,7 @@
 name:AtlasExportFunction
 description:Expression function to export atlas images.
 
-version:1.0
+version:1.1
 qgisMinimumVersion:3.16
 experimental:False
 homepage:https://github.com/elpaso/qgis-atlas-export-function
@@ -15,6 +15,8 @@ about:This plugin adds a new expression function atlas_image() that renders an a
 changelog:
     Version 1.0:
     * initial implementation
+    Version 1.1:
+    * fix persistent feature filter
 
 
 icon:icons/atlas_image_icon.svg

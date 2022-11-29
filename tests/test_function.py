@@ -37,6 +37,10 @@ class AtlasFunctionTest(TestCase):
         cls.qgs.initQgis()
         cls.atlas_func = AtlasImageFunction()
         QgsExpression.registerFunction(cls.atlas_func)
+
+    def setUp(self):
+
+        super().setUp()
         QgsProject.instance().read(os.path.join(os.path.dirname(__file__), 'data', 'project.qgs'))
 
     @classmethod
@@ -84,6 +88,15 @@ class AtlasFunctionTest(TestCase):
         feature_id = 1
         layout_name='layout_one'
 
+        p = QgsProject.instance()
+        m = p.layoutManager()
+        m.layoutByName(layout_name)
+        l = m.layoutByName(layout_name)
+        atlas = l.atlas()
+
+        filter_expression = atlas.filterExpression()
+        filter_features = atlas.filterFeatures()
+
         valid, error = QgsExpression.checkExpression('atlas_image({feature_id}, \'{layout_name}\', dpi:=20)'.format(feature_id=feature_id, layout_name=layout_name), context)
         self.assertTrue(valid, error)
 
@@ -113,6 +126,9 @@ class AtlasFunctionTest(TestCase):
         self.assertIsNotNone(image_data)
         img = self._test_color(image_data, 'png', [0, 0, 255])
         self.assertEqual(img.size(), QSize(3331, 2355))
+
+        self.assertEqual(atlas.filterExpression(), filter_expression)
+        self.assertEqual(atlas.filterFeatures(), filter_features)
 
 
 if __name__ == '__main__':

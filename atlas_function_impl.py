@@ -124,9 +124,6 @@ class AtlasImageFunction(QgsExpressionFunction):
         if not atlas or not atlas.enabled():
             return None
 
-        atlas.setFilterExpression('$id = {}'.format(feature_id))
-        atlas.setFilterFeatures(True)
-
         if layout_page > layout.pageCollection().pageCount():
             return None
 
@@ -154,18 +151,29 @@ class AtlasImageFunction(QgsExpressionFunction):
         exportSettings.imageSize = imageSize
         exportSettings.pages.append(layout_page - 1)
 
+        filter_expression = atlas.filterExpression()
+        filter_features = atlas.filterFeatures()
+
+        atlas.setFilterExpression('$id = {}'.format(feature_id))
+        atlas.setFilterFeatures(True)
+
         atlas.beginRender()
         if atlas.next():
             exporter = QgsLayoutExporter(atlas.layout())
             exporter.exportToImage(tmp_file, exportSettings)
         else:
             atlas.endRender()
+            atlas.setFilterExpression(filter_expression)
+            atlas.setFilterFeatures(filter_features)
             return None
 
         atlas.endRender()
 
         with open(tmp_file, 'rb') as output:
             image = output.read()
+
+        atlas.setFilterExpression(filter_expression)
+        atlas.setFilterFeatures(filter_features)
 
         # QgsMessageLog.logMessage('Atlas exported {}'.format(len(image)))
         return QByteArray(image)

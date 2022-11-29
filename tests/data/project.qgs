@@ -993,7 +993,7 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" name="atlasRasterFormat" value="png"/>
         </Option>
       </customproperties>
-      <Atlas sortFeatures="0" coverageLayer="data_ce764e21_6703_468d_a7c9_80ee7f25536e" hideCoverage="0" pageNameExpression="&quot;id&quot;" featureFilter="$id = 0" coverageLayerSource="/home/ale/dev/python/qgis-atlas-export-function/tests/data/data.shp" enabled="1" coverageLayerName="data" filterFeatures="1" coverageLayerProvider="ogr" filenamePattern="'output_'||@atlas_featurenumber"/>
+      <Atlas sortFeatures="0" coverageLayer="data_ce764e21_6703_468d_a7c9_80ee7f25536e" hideCoverage="0" pageNameExpression="&quot;id&quot;" featureFilter="" coverageLayerSource="/home/ale/dev/python/qgis-atlas-export-function/tests/data/data.shp" enabled="1" coverageLayerName="data" filterFeatures="0" coverageLayerProvider="ogr" filenamePattern="'output_'||@atlas_featurenumber"/>
     </Layout>
   </Layouts>
   <Bookmarks/>
